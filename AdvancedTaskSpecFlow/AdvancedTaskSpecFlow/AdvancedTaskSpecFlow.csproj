@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Certifications.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Skills.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
     <PackageReference Include="NUnit.Console" Version="3.16.3" />
@@ -23,6 +25,10 @@
     <PackageReference Include="SpecFlow.Contrib.Variants" Version="3.9.80" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Screenshots\" />
   </ItemGroup>
 
 </Project>
