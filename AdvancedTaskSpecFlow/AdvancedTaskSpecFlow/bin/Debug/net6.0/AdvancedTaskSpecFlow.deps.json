@@ -8,6 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "AdvancedTaskSpecFlow/1.0.0": {
         "dependencies": {
+          "AutoItX.Dotnet": "3.3.14.5",
+          "AutoItX3.Net": "3.3.16.1",
+          "DotNetSeleniumExtras.PageObjects": "3.11.0",
+          "DotNetSeleniumExtras.PageObjects.Core": "4.3.0",
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
           "Microsoft.NET.Test.Sdk": "17.5.0",
           "Microsoft.NETCore.App": "2.2.8",
@@ -24,11 +28,36 @@
           "AdvancedTaskSpecFlow.dll": {}
         }
       },
+      "AutoItX.Dotnet/3.3.14.5": {},
+      "AutoItX3.Net/3.3.16.1": {
+        "runtime": {
+          "lib/AutoItX3.Assembly.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.3.15.1"
+          }
+        }
+      },
       "BoDi/1.5.0": {
         "runtime": {
           "lib/netstandard2.0/BoDi.dll": {
             "assemblyVersion": "1.5.0.0",
             "fileVersion": "1.5.0.0"
+          }
+        }
+      },
+      "DotNetSeleniumExtras.PageObjects/3.11.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.8.2"
+        }
+      },
+      "DotNetSeleniumExtras.PageObjects.Core/4.3.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.8.2"
+        },
+        "runtime": {
+          "lib/net5.0/SeleniumExtras.PageObjects.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
           }
         }
       },
@@ -1051,12 +1080,40 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoItX.Dotnet/3.3.14.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pobGb0PovHfJLH6tC2wsmafuZSI3u9ThqyHBebipVm9I/eDjzXZ6E6O84vUpE48lwTxPmtPm2HN/1tq0aLbM0Q==",
+      "path": "autoitx.dotnet/3.3.14.5",
+      "hashPath": "autoitx.dotnet.3.3.14.5.nupkg.sha512"
+    },
+    "AutoItX3.Net/3.3.16.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SqseHECRIugFZU6mP+7xMmHG81lHx1+fGKsgLbzttdQ67l2RqFNOS6RKJWX/QraCCZHKBgXaaN8cyau/4ApK0g==",
+      "path": "autoitx3.net/3.3.16.1",
+      "hashPath": "autoitx3.net.3.3.16.1.nupkg.sha512"
+    },
     "BoDi/1.5.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-CzIPzdIAFSd2zuLxI+0K9s48Qv3HQDbWiApn9h96j284rHs2bSPrn/PMca3mi4q3xLSEqOp+GUJ6+mXDD9prKg==",
       "path": "bodi/1.5.0",
       "hashPath": "bodi.1.5.0.nupkg.sha512"
+    },
+    "DotNetSeleniumExtras.PageObjects/3.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DJCLQ3beq1fzqpeQ5jTZwDqmzbOD2Xxsb/jCyShYam88CNwGGn5aBBqu4LVSj0sy0Ai76OauQQncYlC48VvQUQ==",
+      "path": "dotnetseleniumextras.pageobjects/3.11.0",
+      "hashPath": "dotnetseleniumextras.pageobjects.3.11.0.nupkg.sha512"
+    },
+    "DotNetSeleniumExtras.PageObjects.Core/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZqD0Rx5On7NvcwAQbnNnnUy1czifVYin17TN4jnWCIKkKofBJLMK0a0aR/uQ7sF9atUlOKHJRLjs6mZQ9shbTw==",
+      "path": "dotnetseleniumextras.pageobjects.core/4.3.0",
+      "hashPath": "dotnetseleniumextras.pageobjects.core.4.3.0.nupkg.sha512"
     },
     "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
       "type": "package",

@@ -19,20 +19,20 @@ namespace AdvancedTaskSpecFlow.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Dummy")]
-    public partial class DummyFeature
+    [NUnit.Framework.DescriptionAttribute("Notifications")]
+    public partial class NotificationsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Dummy.feature"
+#line 1 "Notifications.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Dummy", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Notifications", "User should be able to use the mark as read and delete notification options", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,18 +71,32 @@ namespace AdvancedTaskSpecFlow.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dummy Fearure File")]
+        [NUnit.Framework.DescriptionAttribute("User should be able to use the mark as read option")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        public virtual void DummyFearureFile()
+        public virtual void UserShouldBeAbleToUseTheMarkAsReadOption()
         {
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dummy Fearure File", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User should be able to use the mark as read option", null, new string[] {
                         "tag1"}, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            testRunner.Given("I created to the dummy feature file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.When("I tried to generate step definition", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("I need to see the file under step definition", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the notification page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User uses the mark as read option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("All the notification should be marked as read", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User should be able to delete all the notification")]
+        public virtual void UserShouldBeAbleToDeleteAllTheNotification()
+        {
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User should be able to delete all the notification", null, ((string[])(null)), argumentsOfScenario);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            testRunner.Given("User is in the notification page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.When("User selects all the notification and deletes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User is not able to see the notification any longer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

@@ -22,7 +22,7 @@ namespace AdvancedTaskSpecFlow
         [AfterTestRun]
         public static void CloseBrowser()
         {
-            driver.Close();
+           driver.Close();
         }
 
         [BeforeScenario("@tag1")]
