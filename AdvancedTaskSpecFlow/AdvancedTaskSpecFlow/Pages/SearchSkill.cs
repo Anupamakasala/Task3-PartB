@@ -11,53 +11,48 @@ namespace AdvancedTaskSpecFlow.Pages
     public class SearchSkill :CommonDriver
     {
 
-        IWebElement SearchSkillTextbox => driver.FindElement(By.XPath("//div[@class = 'ui small icon input search-box']/input[@placeholder = 'Search skills']"));
+        IWebElement searchSkillTextbox => driver.FindElement(By.XPath("//div[@class = 'ui small icon input search-box']/input[@placeholder = 'Search skills']"));
 
-        IWebElement SearchIcon => driver.FindElement(By.XPath("//div[@class = 'ui small icon input search-box']/i[@class = 'search link icon']"));
+        IWebElement searchIcon => driver.FindElement(By.XPath("//div[@class = 'ui small icon input search-box']/i[@class = 'search link icon']"));
 
-        IWebElement AllCategories => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/div/a[1]/b"));
+        IWebElement allCategories => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/div/a[1]/b"));
 
-        IWebElement ProgrammingTech => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']//div[@class='ui link list']/a[7]"));
+        IWebElement programmingTech => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']//div[@class='ui link list']/a[7]"));
 
-        IWebElement Qa => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/div/a[11]"));
+        IWebElement qa => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/div/a[11]"));
+        IWebElement searchSkill2 => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='ui small icon input search-box']//input[@placeholder='Search skills']"));
 
-        //IWebElement SearchUser => driver.FindElement(By.XPath("//div[@class='ui search']/div[@class='ui icon input fluid']/input[@placeholder ='Search user']"));
-        //IWebElement SearchUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[3]/div/section/div/div[1]/div[3]/div[1]/div/div[1]/input"));
+        IWebElement search2Icon => driver.FindElement(By.XPath(" //section[@class='search-results']/div[@class='ui grid']/div[@class='four wide column']/div[@class='ui small icon input search-box']/i"));
+        IWebElement searchByUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[1]/input"));
+        IWebElement searchUserSearchIcon => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[2]/i"));
 
-
-        IWebElement SearchSkill2 => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='ui small icon input search-box']//input[@placeholder='Search skills']"));
-
-        IWebElement Search2Icon => driver.FindElement(By.XPath(" //section[@class='search-results']/div[@class='ui grid']/div[@class='four wide column']/div[@class='ui small icon input search-box']/i"));
-        IWebElement SearchByUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[1]/input"));
-        IWebElement SearchUserSearchIcon => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[2]/i"));
-
-        IWebElement SelectUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[2]/div[1]/div/span"));
+        IWebElement selectUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[2]/div[1]/div/span"));
                                                                 
-        IWebElement RefreshIcon => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[2]/button/i"));
+        IWebElement refreshIcon => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[2]/button/i"));
 
 
-        IWebElement OnlineFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'Online')]"));
-        IWebElement OnsiteFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'Onsite')]"));
-        IWebElement ShowAllFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'ShowAll')]"));
+        IWebElement onlineFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'Online')]"));
+        IWebElement onsiteFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'Onsite')]"));
+        IWebElement showAllFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'ShowAll')]"));
 
-        IWebElement RefineSearch => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/h3"));
-        public string WaitSearchTextbox1 = "//div[@class = 'ui small icon input search-box']/input[@placeholder = 'Search skills']";
+        IWebElement refineSearch => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/h3"));
+        public string waitSearchTextbox1 = "//div[@class = 'ui small icon input search-box']/input[@placeholder = 'Search skills']";
 
 
-        public string WaitBtn1 = "//section[@class='search-results']//div[@class='ui grid']//div[@class='twelve wide column']//div[@class='right floated column ']/button[1]";
-        public string WaitTextResultsPerPage = "//section[@class='search-results']//div[@class='ui grid']//div[@class='twelve wide column']//div[@class='right floated column ']/text()";
-        public string WaitPageNo = "//*[@id=\"service-search-section\"]/div[3]/div/section/div/div[2]/div/div[3]/div[2]/div/button[2]";
-        public string WaitForUser = "//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[2]/div[1]";
+        public string waitBtn1 = "//section[@class='search-results']//div[@class='ui grid']//div[@class='twelve wide column']//div[@class='right floated column ']/button[1]";
+        public string waitTextResultsPerPage = "//section[@class='search-results']//div[@class='ui grid']//div[@class='twelve wide column']//div[@class='right floated column ']/text()";
+        public string waitPageNo = "//*[@id=\"service-search-section\"]/div[3]/div/section/div/div[2]/div/div[3]/div[2]/div/button[2]";
+        public string waitForUser = "//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[2]/div[1]";
         //Search a Skill
         public void SearchSkillSteps(string Search1)
         {
             //Thread.Sleep(3000);            
-            WaitHelpers.WaitToExist(driver, "XPath", WaitSearchTextbox1, 20);
-            SearchSkillTextbox.Click();
-            SearchSkillTextbox.SendKeys(Search1);
+            WaitHelpers.WaitToExist(driver, "XPath", waitSearchTextbox1, 20);
+            searchSkillTextbox.Click();
+            searchSkillTextbox.SendKeys(Search1);
 
-            SearchIcon.Click();
-            WaitHelpers.WaitToBeVisible(driver, "XPath", WaitBtn1, 10);
+            searchIcon.Click();
+            WaitHelpers.WaitToBeVisible(driver, "XPath", waitBtn1, 10);
 
         }
 
@@ -66,16 +61,16 @@ namespace AdvancedTaskSpecFlow.Pages
         public void ClickAllCat()
         {
 
-            AllCategories.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            allCategories.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
         //Refine the search by a Category
         public void ClickCategory()
         {
 
-            ProgrammingTech.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            programmingTech.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
         
@@ -84,21 +79,21 @@ namespace AdvancedTaskSpecFlow.Pages
         public void ClickSubCategory()
         {
 
-            Qa.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            qa.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
 
 
         //Refine search by username
-        public void UserSearch(String User)
+        public void UserSearch(String user)
         {
             Thread.Sleep(3000);
-            SearchByUser.Click();
-            SearchByUser.SendKeys(User);
-            WaitHelpers.WaitToExist(driver, "XPath", WaitForUser, 10);
+            searchByUser.Click();
+            searchByUser.SendKeys(user);
+            WaitHelpers.WaitToExist(driver, "XPath", waitForUser, 10);
             Thread.Sleep(3000);
-            SelectUser.Click();
+            selectUser.Click();
             Thread.Sleep(3000);
 
         }
@@ -107,18 +102,18 @@ namespace AdvancedTaskSpecFlow.Pages
         public void ClickRefresh()
         {
 
-            RefreshIcon.Click();
+            refreshIcon.Click();
         }
 
 
         //Search a  skill 
-        public void ClickSearchSkillInner(string Search2)
+        public void ClickSearchSkillInner(string search2)
         {
 
-            SearchSkill2.Click();
-            SearchSkill2.SendKeys(Search2);
-            Search2Icon.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            searchSkill2.Click();
+            searchSkill2.SendKeys(search2);
+            search2Icon.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
         //Refine the search by Filter
@@ -126,45 +121,40 @@ namespace AdvancedTaskSpecFlow.Pages
         {
 
 
-            OnlineFilterBtn.Click();
+            onlineFilterBtn.Click();
 
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
 
-            OnsiteFilterBtn.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            onsiteFilterBtn.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
 
-            ShowAllFilterBtn.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", WaitBtn1, 10);
+            showAllFilterBtn.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", waitBtn1, 10);
 
 
         }
         public string VerifySearch()
         {
-            string refine = RefineSearch.Text;
+            string refine = refineSearch.Text;
             return refine;
         }
         public string BoldClickCategory()
         {
-            string BoldProgrammingTech = ProgrammingTech.GetCssValue("font-weight");
+            string boldProgrammingTech = programmingTech.GetCssValue("font-weight");
 
-            return BoldProgrammingTech;
+            return boldProgrammingTech;
 
         }
 
         public string BoldClickSubCategory()
         {
-            string BoldQa = Qa.GetCssValue("font-weight");
+            string boldQa = qa.GetCssValue("font-weight");
 
-            return BoldQa;
+            return boldQa;
 
         }
 
-        //public void Message()
-        //{
-        //    Console.WriteLine("Search Skill test Passed");
-        //}
-
-
+       
     }
 
 

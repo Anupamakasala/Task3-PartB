@@ -11,12 +11,12 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
     public class CertificationsStepDefinitions : CommonDriver
     {
         LoginPage loginObject;
-        Certifications CertObj;
+        Certifications certObj;
         string screenShotPath;
         public CertificationsStepDefinitions()
         {
             loginObject = new LoginPage();
-            CertObj = new Certifications();
+            certObj = new Certifications();
             
         }
 
@@ -29,15 +29,15 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
         [When(@"I  add '([^']*)', '([^']*)' and '([^']*)'")]
         public void WhenIAddAnd(string certificate, string certificateFrom, string year)
         {
-            CertObj.ClickCertification();
-            CertObj.CertificationSteps(certificate, certificateFrom, year);
+            certObj.ClickCertification();
+            certObj.CertificationSteps(certificate, certificateFrom, year);
         }
 
         [Then(@"Certification record should be successfully added '([^']*)' on profile page")]
         public void ThenCertificationRecordShouldBeSuccessfullyAddedOnProfilePage(string certificate)
         {
             
-            string newCertText = CertObj.GetCertificate();
+            string newCertText = certObj.GetCertificate();
             screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
 
             
@@ -45,17 +45,13 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
             Console.WriteLine(newCertText);
             if (newCertText == certificate)
             {
-
-
-
                 test = extentReportObj.CreateTest("Create Certifications", " Create new Certifications").AddScreenCaptureFromPath(screenShotPath);
                 test.Log(Status.Info, "Certifications record is created successfully");
                 test.Log(Status.Pass, "Test passed");
                 Assert.Pass("Add Operation for Certification, Pass");
             }
             else
-            {
-                
+            {                
                 test = extentReportObj.CreateTest("Create Certifications", " Create new Certifications").AddScreenCaptureFromPath(screenShotPath);
                 test.Log(Status.Info, "Certifications record is Not created ");
                 test.Log(Status.Fail, "OOPS! Add Operation Fail");
@@ -65,29 +61,26 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
                 
             }
         }
-
-
-
         
         [When(@"I update '([^']*)', '([^']*)' and '([^']*)'")]
         public void WhenIUpdateAnd(string Certificate, string CertificateFrom, string Year)
         {
-            CertObj.UpdateCertificateClick();
+            certObj.UpdateCertificateClick();
 
-            CertObj.UpdateCertificateDetails(Certificate, CertificateFrom, Year);
+            certObj.UpdateCertificateDetails(Certificate, CertificateFrom, Year);
 
-            CertObj.UpdateCertificate();
+            certObj.UpdateCertificate();
         }
 
         [Then(@"Certification record should be successfully updated '([^']*)' on profile page")]
         public void ThenCertificationRecordShouldBeSuccessfullyUpdatedOnProfilePage(string certificate)
         {
-            string NewUpdatedCertificate = CertObj.GetUpdatedCertificate();
+            string newUpdatedCertificate = certObj.GetUpdatedCertificate();
             string screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
             Console.WriteLine(certificate);
-            Console.WriteLine(NewUpdatedCertificate);
+            Console.WriteLine(newUpdatedCertificate);
 
-            if (NewUpdatedCertificate == certificate)
+            if (newUpdatedCertificate == certificate)
             {
                 test = extentReportObj.CreateTest("Update Certification", " Update the existing Certificate in profile").AddScreenCaptureFromPath(screenShotPath);
                 test.Log(Status.Info, "Certification record is Updated successfully");
@@ -104,25 +97,22 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
         }
 
 
-
-
-
         [When(@"I delete an existing certification record '([^']*)'")]
         public void WhenIDeleteAnExistingCertificationRecord(string certificate)
         {
-            CertObj.DeleteCertificate(certificate);
+            certObj.DeleteCertificate(certificate);
         }
 
         [Then(@"The record should be  deleted and '([^']*)' should NOT be displayed in the list")]
         public void ThenTheRecordShouldBeDeletedAndShouldNOTBeDisplayedInTheList(string certificate)
         {
-            string DeletedCertificateText = CertObj.GetDeleteCertificate();
+            string deletedCertificateText = certObj.GetDeleteCertificate();
             string screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
 
             Console.WriteLine( certificate);
-            Console.WriteLine( DeletedCertificateText);
+            Console.WriteLine( deletedCertificateText);
 
-            if (DeletedCertificateText == certificate)
+            if (deletedCertificateText == certificate)
             {
                 test = extentReportObj.CreateTest("Delete Certification", " Delete the existing Certificate in profile").AddScreenCaptureFromPath(screenShotPath);
                 test.Log(Status.Info, "Certification record is NOT Deleted successfully");

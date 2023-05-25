@@ -14,50 +14,50 @@ namespace AdvancedTaskSpecFlow.Pages
 {
     public class Skills :CommonDriver
     {
-        IWebElement SkillTab => driver.FindElement(By.XPath("//a[contains(text(),'Skills')]"));        
-        IWebElement SkillAddButton => driver.FindElement(By.XPath("//div[@data-tab='second']/div/div[2]/div/table/thead/tr/th[3]/div"));
-        IWebElement SkillTextbox => driver.FindElement(By.Name("name"));
-        IWebElement SkillAdd => driver.FindElement(By.XPath("//input [@type ='button' and @value='Add']"));        
+        IWebElement skillTab => driver.FindElement(By.XPath("//a[contains(text(),'Skills')]"));        
+        IWebElement skillAddButton => driver.FindElement(By.XPath("//div[@data-tab='second']/div/div[2]/div/table/thead/tr/th[3]/div"));
+        IWebElement skillTextbox => driver.FindElement(By.Name("name"));
+        IWebElement skillAdd => driver.FindElement(By.XPath("//input [@type ='button' and @value='Add']"));        
         IWebElement newskill => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[1]"));        
         IWebElement newSkillLevel => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[2]"));        
-        IWebElement EditSkillIcon => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[3]/span[1]/i"));
-        IWebElement EditSkill => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"));
-        IWebElement SkillUpdateButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Update']"));
+        IWebElement editSkillIcon => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[3]/span[1]/i"));
+        IWebElement editSkill => driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"));
+        IWebElement skillUpdateButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Update']"));
         IWebElement newUpdatedskill => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[1]"));
         IWebElement newUpdatedSkillLevel => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[2]"));
-        IWebElement DeleteSkillIcon => driver.FindElement(By.XPath("//div[@data-tab='second']/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
+        IWebElement deleteSkillIcon => driver.FindElement(By.XPath("//div[@data-tab='second']/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
         IWebElement deletedSkill => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
 
         //Wait for the AddNew button to be clickable
-        public string Wait0 = "//div[@data-tab='second']/div/div[2]/div/table/thead/tr/th[3]/div";
+        public string wait0 = "//div[@data-tab='second']/div/div[2]/div/table/thead/tr/th[3]/div";
         //Wait for the textbox to be clickable
-        public string Wait1 = "//div[@data-tab='second']/div/div[2]/div/div/div[1]/input";
+        public string wait1 = "//div[@data-tab='second']/div/div[2]/div/div/div[1]/input";
         //Wait for the text to exist
-        public string Wait2 = "//div[@data-tab='second']//table/tbody/tr/td[1]";
+        public string wait2 = "//div[@data-tab='second']//table/tbody/tr/td[1]";
         //Wait for Delete icon to be clickable
-        public string Wait3 = "//div[@data-tab='second']//table/tbody/tr/td[3]/span[2]/i";       
+        public string wait3 = "//div[@data-tab='second']//table/tbody/tr/td[3]/span[2]/i";       
 
 
         public void SkillsClick()
         {
-            SkillTab.Click();
-            //WaitHelpers.WaitToBeVisible(driver, "XPath", "Wait0", 5);
-            SkillAddButton.Click();
-            WaitHelpers.WaitToBeClickable(driver, "XPath", Wait1, 5);
+            skillTab.Click();
+            //WaitHelpers.WaitToBeVisible(driver, "XPath", "wait0", 5);
+            skillAddButton.Click();
+            WaitHelpers.WaitToBeClickable(driver, "XPath", wait1, 5);
         }
         public void SkillsSteps(string skill, string level)
 
         {
             //ADD Skills              
             
-            SkillTextbox.SendKeys(skill);
-            SelectElement SkillLevel = new SelectElement(driver.FindElement(By.Name("level")));
-            SkillLevel.SelectByValue(level);            
+            skillTextbox.SendKeys(skill);
+            SelectElement skillLevel = new SelectElement(driver.FindElement(By.Name("level")));
+            skillLevel.SelectByValue(level);            
         }
         public void SkillsAdd()
         {
-            SkillAdd.Click();
-            WaitHelpers.WaitToExist(driver, "XPath", Wait2, 10);
+            skillAdd.Click();
+            WaitHelpers.WaitToExist(driver, "XPath", wait2, 10);
             Thread.Sleep(3000);
         }
         public string GetSkill(string skill)
@@ -72,21 +72,21 @@ namespace AdvancedTaskSpecFlow.Pages
         //UPDATE Skill
         public void UpdateSkillsClick()
         {
-            SkillTab.Click();
-            EditSkillIcon.Click();
+            skillTab.Click();
+            editSkillIcon.Click();
         }
         public void UpdateSkills(string skill, string level)
         {
 
-            EditSkill.Clear();
-            EditSkill.SendKeys(skill);
+            editSkill.Clear();
+            editSkill.SendKeys(skill);
 
-            SelectElement EditSkillLevel = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select")));
-            EditSkillLevel.SelectByValue(level);
+            SelectElement editSkillLevel = new SelectElement(driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select")));
+            editSkillLevel.SelectByValue(level);
         }
         public void UpdateSkillsButton()
         {
-            SkillUpdateButton.Click();
+            skillUpdateButton.Click();
             Thread.Sleep(3000);
         }
 
@@ -104,9 +104,9 @@ namespace AdvancedTaskSpecFlow.Pages
         public void DeleteSkills(string skill)
 
         {           
-            SkillTab.Click();
-            WaitHelpers.WaitToBeClickable(driver, "XPath", Wait3, 5);
-            DeleteSkillIcon.Click();
+            skillTab.Click();
+            WaitHelpers.WaitToBeClickable(driver, "XPath", wait3, 5);
+            deleteSkillIcon.Click();
             Thread.Sleep(3000);
         }
 

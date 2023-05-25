@@ -16,27 +16,27 @@ namespace AdvancedTaskSpecFlow.Pages
 {
     public class Certifications : CommonDriver
     {
-        IWebElement CertificationTab => driver.FindElement(By.XPath("//a[contains(text(),'Certifications')]"));
-        IWebElement CertAddnewButton => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div[1]/div[2]/div/table/thead/tr/th[4]/div"));
+        IWebElement certificationTab => driver.FindElement(By.XPath("//a[contains(text(),'Certifications')]"));
+        IWebElement certAddnewButton => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div[1]/div[2]/div/table/thead/tr/th[4]/div"));
         IWebElement certificateTextbox => driver.FindElement(By.Name("certificationName"));
         IWebElement certificatefromTextbox => driver.FindElement(By.Name("certificationFrom"));
         IWebElement certificateAddButton => driver.FindElement(By.XPath("//input [@type ='button' and @value='Add']"));       
-        IWebElement CertificateText => driver.FindElement(By.XPath("//div[@data-tab=\"fourth\"]/div/div/div/table/tbody[last()]/tr/td[1]"));
-        IWebElement CertificateFromText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[2]"));
-        IWebElement CertificateYearText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[3]"));
-        IWebElement EditCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[1]"));
-        IWebElement EditCertificate => driver.FindElement(By.Name("certificationName"));
-        IWebElement EditCertificateFrom => driver.FindElement(By.Name("certificationFrom"));
-        IWebElement CertificateUpdateButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Update']"));
-        IWebElement NewUpdatedCertificate => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]"));
-        IWebElement DeleteCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[2]/i"));
-        IWebElement DeletedCertificateText => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
+        IWebElement certificateText => driver.FindElement(By.XPath("//div[@data-tab=\"fourth\"]/div/div/div/table/tbody[last()]/tr/td[1]"));
+        IWebElement certificateFromText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[2]"));
+        IWebElement certificateYearText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[3]"));
+        IWebElement editCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[1]"));
+        IWebElement editCertificate => driver.FindElement(By.Name("certificationName"));
+        IWebElement editCertificateFrom => driver.FindElement(By.Name("certificationFrom"));
+        IWebElement certificateUpdateButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Update']"));
+        IWebElement newUpdatedCertificate => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]"));
+        IWebElement deleteCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[2]/i"));
+        IWebElement deletedCertificateText => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
 
             //Add Certification            
         public void ClickCertification()
         {
-                CertificationTab.Click();
-                CertAddnewButton.Click();
+                certificationTab.Click();
+                certAddnewButton.Click();
 
         }
 
@@ -44,8 +44,8 @@ namespace AdvancedTaskSpecFlow.Pages
         {
             certificateTextbox.SendKeys(Certificate);           
             certificatefromTextbox.SendKeys(CertificateFrom);
-            SelectElement Certificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
-            Certificateyear.SelectByValue(Year);
+            SelectElement certificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
+            certificateyear.SelectByValue(Year);
                    
             certificateAddButton.Click();
             //Wait.WaitToBeVisible(driver, "XPath", "//div[@class ='form-wrapper']/table/tbody[last()]/tr/td[1]",10);
@@ -55,7 +55,7 @@ namespace AdvancedTaskSpecFlow.Pages
         public string GetCertificate()
         {
             Thread.Sleep(6000);
-            return CertificateText.Text;
+            return certificateText.Text;
             
         }
 
@@ -63,29 +63,29 @@ namespace AdvancedTaskSpecFlow.Pages
         public void UpdateCertificateClick()
 
         {
-            CertificationTab.Click();
+            certificationTab.Click();
 
             WaitHelpers.WaitToBeVisible(driver, "XPath", "//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]", 10);
 
-            EditCertificateIcon.Click();
+            editCertificateIcon.Click();
         }
         public void UpdateCertificateDetails(string Certificate, string CertificateFrom, string Year)
         {
-            EditCertificate.Clear();
+            editCertificate.Clear();
 
-            EditCertificate.SendKeys(Certificate);
+            editCertificate.SendKeys(Certificate);
 
-            EditCertificateFrom.Clear();
+            editCertificateFrom.Clear();
 
-            EditCertificateFrom.SendKeys(CertificateFrom);
+            editCertificateFrom.SendKeys(CertificateFrom);
 
-            SelectElement EditCertificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
+            SelectElement editCertificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
 
-            EditCertificateyear.SelectByValue(Year);
+            editCertificateyear.SelectByValue(Year);
         }
         public void UpdateCertificate()
         { 
-            CertificateUpdateButton.Click();
+            certificateUpdateButton.Click();
 
             WaitHelpers.WaitToBeVisible(driver, "XPath", "//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]", 10);
         }
@@ -93,21 +93,21 @@ namespace AdvancedTaskSpecFlow.Pages
         public string GetUpdatedCertificate()
         {
             Thread.Sleep(5000);                      
-            return NewUpdatedCertificate.Text;
+            return newUpdatedCertificate.Text;
         }
 
         public void DeleteCertificate(string Certificate)
         {
-            CertificationTab.Click();
+            certificationTab.Click();
             WaitHelpers.WaitToExist(driver, "XPath", "//div[@class='form-wrapper']/table/ tbody/tr/td[1]", 10);           
-            DeleteCertificateIcon.Click();
+            deleteCertificateIcon.Click();
             Thread.Sleep(5000);
         }
 
         public string GetDeleteCertificate()
         {
             
-            return DeletedCertificateText.Text;         
+            return deletedCertificateText.Text;         
 
         }
 

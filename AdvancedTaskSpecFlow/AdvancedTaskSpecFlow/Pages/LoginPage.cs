@@ -13,10 +13,10 @@ namespace AdvancedTaskSpecFlow.Pages
     public class LoginPage : CommonDriver
     {
 
-        IWebElement SignInButton => driver.FindElement(By.XPath("//a[@class='item']"));
-        IWebElement UserNameTextbox => driver.FindElement(By.Name("email"));
-        IWebElement PasswordTextbox => driver.FindElement(By.XPath("//input[@type='password']"));
-        IWebElement LoginButton => driver.FindElement(By.XPath("//button[@class='fluid ui teal button'][text()='Login']"));
+        IWebElement signInButton => driver.FindElement(By.XPath("//a[@class='item']"));
+        IWebElement userNameTextbox => driver.FindElement(By.Name("email"));
+        IWebElement passwordTextbox => driver.FindElement(By.XPath("//input[@type='password']"));
+        IWebElement loginButton => driver.FindElement(By.XPath("//button[@class='fluid ui teal button'][text()='Login']"));
         public void LoginSteps()
         {
 
@@ -25,13 +25,13 @@ namespace AdvancedTaskSpecFlow.Pages
             //ImpliWait();
 
             //Login                       
-            SignInButton.Click();
+            signInButton.Click();
             WaitHelpers.WaitToBeClickable(driver, "XPath", "//input[@type='text'and @name='email']", 3);
 
-            UserNameTextbox.SendKeys("poojasaini31@gmail.com");
-            PasswordTextbox.SendKeys("Testing");
+            userNameTextbox.SendKeys("poojasaini31@gmail.com");
+            passwordTextbox.SendKeys("Testing");
             WaitHelpers.WaitToBeVisible(driver, "XPath", "//BUTTON[@class='fluid ui teal button'][text()='Login']", 5);
-            LoginButton.Click();
+            loginButton.Click();
             WaitHelpers.WaitToBeVisible(driver, "XPath", "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span", 10);
 
         }

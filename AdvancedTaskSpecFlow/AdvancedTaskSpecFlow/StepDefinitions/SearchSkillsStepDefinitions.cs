@@ -12,46 +12,46 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
     {
 
         LoginPage loginObject;
-        SearchSkill SearchSkillObj;
+        SearchSkill searchSkillObj;
         string screenShotPath;
         public SearchSkillsStepDefinitions()
         {
             loginObject = new LoginPage();
-            SearchSkillObj = new SearchSkill();
+            searchSkillObj = new SearchSkill();
 
         }
 
         [When(@"I '([^']*)' for a skill and filter with categories")]
         public void WhenIForASkillAndFilterWithCategories(string Search1)
         {
-            SearchSkillObj.SearchSkillSteps(Search1);
+            searchSkillObj.SearchSkillSteps(Search1);
 
-            SearchSkillObj.ClickAllCat();
-            SearchSkillObj.ClickCategory();
-            SearchSkillObj.ClickSubCategory();
+            searchSkillObj.ClickAllCat();
+            searchSkillObj.ClickCategory();
+            searchSkillObj.ClickSubCategory();
         }
 
         [When(@"I filter the search for a User Name '([^']*)',")]
         public void WhenIFilterTheSearchForAUserName(string User)
         {
-            SearchSkillObj.UserSearch(User);
-            SearchSkillObj.ClickRefresh();
+            searchSkillObj.UserSearch(User);
+            searchSkillObj.ClickRefresh();
         }
 
         [When(@"I perform another '([^']*)'  and apply filters")]
         public void WhenIPerformAnotherAndApplyFilters(string Search2)
         {
-            SearchSkillObj.ClickSearchSkillInner(Search2);
-            SearchSkillObj.Filters();
+            searchSkillObj.ClickSearchSkillInner(Search2);
+            searchSkillObj.Filters();
         }
 
         [Then(@"I should be able to see the searched skill offered by users for transaction\.")]
         public void ThenIShouldBeAbleToSeeTheSearchedSkillOfferedByUsersForTransaction_()
         {
             //SearchSkillObj.Message();
-            string refine = SearchSkillObj.VerifySearch();
-            string BoldPt = SearchSkillObj.BoldClickCategory();
-            string BoldQa = SearchSkillObj.BoldClickSubCategory();
+            string refine = searchSkillObj.VerifySearch();
+            string BoldPt = searchSkillObj.BoldClickCategory();
+            string BoldQa = searchSkillObj.BoldClickSubCategory();
 
             Console.WriteLine(refine);
             Console.WriteLine(BoldPt);
