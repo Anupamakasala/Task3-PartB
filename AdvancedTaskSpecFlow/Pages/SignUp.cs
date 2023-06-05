@@ -49,35 +49,37 @@ namespace AdvancedTaskSpecFlow.Pages
             Join.Click();
 
             //Enter FirstName
-            FirstName.SendKeys("Task");
+            FirstName.SendKeys("Akash");
 
             //Enter LastName
-            LastName.SendKeys("team");
+            LastName.SendKeys("rana");
 
             //Enter Email
-            Email.SendKeys("Taskteam@gmail.com");
+            Email.SendKeys("rana.akash0938@gmail.com");
 
             //Enter Password
-            Password.SendKeys("Shareskill");
+            Password.SendKeys("9418535907");
 
             //Enter Password again to confirm
-            ConfirmPassword.SendKeys("Shareskill");
+            ConfirmPassword.SendKeys("9418535907");
 
             //Click on Checkbox
             Checkbox.Click();
 
             //Click on join button to Sign Up
             JoinBtn.Click();
+            Thread.Sleep(5000);
 
         }
-
-       public string GetPopUpMessage (IWebDriver driver)
+        public string GetPopUpMessage(IWebDriver driver)
         {
             WaitHelpers.WaitToExist(driver, "XPath", "/html/body/div[1]/div", 10);
             IWebElement registrationSuccessfulPopUpMessage = driver.FindElement(By.XPath("/html/body/div[1]/div"));
             return registrationSuccessfulPopUpMessage.Text;
 
         }
+
+
     }
 }
     

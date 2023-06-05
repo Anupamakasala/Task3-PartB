@@ -41,10 +41,10 @@ namespace AdvancedTaskSpecFlow.Pages
             SignIn.Click();
 
             //Enter email
-            Email.SendKeys("Taskteam@gmail.com");
+            Email.SendKeys("rana.akash101@gmail.com");
 
             //Enter password
-            Password.SendKeys("Shareskill");
+            Password.SendKeys("9418535907");
 
             //Click the RememberMe Checkbox
             Checkbox.Click();
@@ -54,14 +54,10 @@ namespace AdvancedTaskSpecFlow.Pages
            
         }
 
-        public string GetName(IWebDriver driver)
-        {
-            WaitHelpers.WaitToExist(driver,"XPath","/html/body/div[1]/div/div[1]/div[2]/div/span",10);
-            IWebElement newName = driver.FindElement(By.XPath("/html/body/div[1]/div/div[1]/div[2]/div/span"));
-            return newName.Text;
+      
         }
     }
-}
+
 
 
     
