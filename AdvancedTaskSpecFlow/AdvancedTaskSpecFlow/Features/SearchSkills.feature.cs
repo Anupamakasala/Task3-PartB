@@ -89,8 +89,8 @@ namespace AdvancedTaskSpecFlow.Features
             this.ScenarioStart();
             testRunner.Given("I logged  into Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When(string.Format("I \'{0}\' for a skill and filter with categories", search1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And(string.Format("I filter the search for a User Name \'{0}\',", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("I perform another \'{0}\'  and apply filters", search2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("I filter the search for a User Name \'{0}\',", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("I should be able to see the searched skill offered by users for transaction.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

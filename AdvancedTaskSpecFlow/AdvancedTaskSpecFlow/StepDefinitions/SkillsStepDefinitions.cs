@@ -1,6 +1,7 @@
 using AdvancedTaskSpecFlow.Pages;
 using AdvancedTaskSpecFlow.Utilities;
 using AventStack.ExtentReports;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using NUnit.Framework;
 using System;
 using System.Reflection.Emit;
@@ -17,8 +18,6 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
         public SkillsStepDefinitions()
         {
             loginObject = new LoginPage();
-
-
             skillObj = new Skills();
         }
     
@@ -36,11 +35,16 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
             skillObj.SkillsAdd();
         }
 
-        [Then(@"The skills record  '([^']*)' and '([^']*)'  should be added successfully on profile page\.")]
+        [Then(@"The skills record  '([^']*)' and '([^']*)'  should be added successfully on profile page")]
         public void ThenTheSkillsRecordAndShouldBeAddedSuccessfullyOnProfilePage_(string skill, string level)
         {
             string newskill = skillObj.GetSkill(skill);
             string newskillLevel = skillObj.GetSkillLevel(level);
+
+            Console.WriteLine(newskill);
+            Console.WriteLine(skill);
+            Console.WriteLine(newskillLevel);
+            Console.WriteLine(level);
 
             screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
 
@@ -122,5 +126,49 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
                 Assert.Pass("Skill Deleted");
             }
         }
+
+        [When(@"I add invalid '([^']*)' and '([^']*)'")]
+        public void WhenIAddInvalidAnd(string skill, string level)
+        {
+            skillObj.SkillsClick();
+            skillObj.SkillsSteps(skill, level);
+            skillObj.SkillsAdd();
+        }
+
+        
+
+        [Then(@"The skills record should NOT be added and an error message '([^']*)' should be displayed")]
+        public void ThenTheSkillsRecordShouldNOTBeAddedAndAnErrorMessageShouldBeDisplayed(string message)
+        {
+            string invalidSkillText = skillObj.InvalidSkills();
+            screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+
+
+            Console.WriteLine(message);
+            Console.WriteLine(invalidSkillText);
+
+            if (invalidSkillText == message)
+            {
+                test = extentReportObj.CreateTest("Invalid Certifications", " Test for invalid certifications data").AddScreenCaptureFromPath(screenShotPath);
+                test.Log(Status.Info, "Correct message");
+                test.Log(Status.Pass, "Test passed");
+                Assert.Pass("Correct message is displayed, Test Pass");
+            }
+            else
+            {
+                test = extentReportObj.CreateTest("Invalid Certifications", " Test for invalid certifications data").AddScreenCaptureFromPath(screenShotPath);
+                test.Log(Status.Info, "Not a correct message ");
+                test.Log(Status.Fail, "OOPS! Test Fail");
+
+                Assert.Fail("OOPS! Not a correct message, Test Fail");
+
+
+            }
+        }
+
+
+
+
+
     }
 }

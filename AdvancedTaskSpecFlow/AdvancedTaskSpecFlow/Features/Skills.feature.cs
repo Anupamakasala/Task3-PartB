@@ -72,9 +72,9 @@ namespace AdvancedTaskSpecFlow.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestCaseAttribute("Painting", "Beginner", null, TestName="T01_AddSkillsOnProfilePage with \"Painting\", \"Beginner\"")]
-        [NUnit.Framework.TestCaseAttribute("Crochet", "Expert", null, TestName="T01_AddSkillsOnProfilePage with \"Crochet\", \"Expert\"")]
-        public virtual void T01_AddSkillsOnProfilePage(string skill, string level, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Painting", "Beginner", null, TestName="_1_AddSkillsOnProfilePage with \"Painting\", \"Beginner\"")]
+        [NUnit.Framework.TestCaseAttribute("Crochet", "Expert", null, TestName="_1_AddSkillsOnProfilePage with \"Crochet\", \"Expert\"")]
+        public virtual void _1_AddSkillsOnProfilePage(string skill, string level, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "tag1"};
@@ -85,23 +85,22 @@ namespace AdvancedTaskSpecFlow.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("skill", skill);
             argumentsOfScenario.Add("level", level);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("T01- Add Skills on profile page", null, @__tags, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1. Add Skills on profile page", null, @__tags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             testRunner.Given("I logged into the Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When(string.Format("I add  \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("The skills record  \'{0}\' and \'{1}\'  should be added successfully on profile page." +
-                        "", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("The skills record  \'{0}\' and \'{1}\'  should be added successfully on profile page", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestCaseAttribute("Dance", "Beginner", null, TestName="T02_UpdateAnExistingSkillOnProfilePage with \"Dance\", \"Beginner\"")]
-        public virtual void T02_UpdateAnExistingSkillOnProfilePage(string skill, string level, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Dance", "Beginner", null, TestName="_2_UpdateAnExistingSkillOnProfilePage with \"Dance\", \"Beginner\"")]
+        public virtual void _2_UpdateAnExistingSkillOnProfilePage(string skill, string level, string[] exampleTags)
         {
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("skill", skill);
             argumentsOfScenario.Add("level", level);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("T02- Update an existing skill on profile page", null, exampleTags, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2. Update an existing skill on profile page", null, exampleTags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             testRunner.Given("I logged into the Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -110,17 +109,41 @@ namespace AdvancedTaskSpecFlow.Features
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestCaseAttribute("Dance", null, TestName="T03_DeleteAnExistingSkillOnProfilePage with \"Dance\"")]
-        public virtual void T03_DeleteAnExistingSkillOnProfilePage(string skill, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Dance", null, TestName="_3_DeleteAnExistingSkillOnProfilePage with \"Dance\"")]
+        public virtual void _3_DeleteAnExistingSkillOnProfilePage(string skill, string[] exampleTags)
         {
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("skill", skill);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("T03- Delete an existing skill on profile page", null, exampleTags, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3. Delete an existing skill on profile page", null, exampleTags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             testRunner.Given("I logged into the Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When(string.Format("I delete a \'{0}\' record", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("Deleted \'{0}\' record should NOT be displayed on profile page", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestCaseAttribute("Painting", "Beginner", "This skill is already exist in your skill list.", null, TestName="_4_AddSkillsWithInvalidDetailsOnProfilePage with \"Painting\", \"Beginner\", \"This sk" +
+            "ill is already exist in your skill list_\"")]
+        [NUnit.Framework.TestCaseAttribute("skillOnly", "", "Please enter skill and experience level", null, TestName="_4_AddSkillsWithInvalidDetailsOnProfilePage with \"skillOnly\", \"\", \"Please enter s" +
+            "kill and experience level\"")]
+        [NUnit.Framework.TestCaseAttribute("", "Beginner", "Please enter skill and experience level", null, TestName="_4_AddSkillsWithInvalidDetailsOnProfilePage with \"\", \"Beginner\", \"Please enter sk" +
+            "ill and experience level\"")]
+        [NUnit.Framework.TestCaseAttribute("", "", "Please enter skill and experience level", null, TestName="_4_AddSkillsWithInvalidDetailsOnProfilePage with \"\", \"\", \"Please enter skill and " +
+            "experience level\"")]
+        public virtual void _4_AddSkillsWithInvalidDetailsOnProfilePage(string skill, string level, string message, string[] exampleTags)
+        {
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("skill", skill);
+            argumentsOfScenario.Add("level", level);
+            argumentsOfScenario.Add("message", message);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4. Add Skills with Invalid details on profile page", null, exampleTags, argumentsOfScenario);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            testRunner.Given("I logged into the Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.When(string.Format("I add invalid \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("The skills record should NOT be added and an error message \'{0}\' should be displa" +
+                        "yed", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

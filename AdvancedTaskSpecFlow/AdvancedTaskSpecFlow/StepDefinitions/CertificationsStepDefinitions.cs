@@ -1,6 +1,7 @@
 using AdvancedTaskSpecFlow.Pages;
 using AdvancedTaskSpecFlow.Utilities;
 using AventStack.ExtentReports;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow;
@@ -129,5 +130,42 @@ namespace AdvancedTaskSpecFlow.StepDefinitions
                 Assert.Pass("Record Deleted,Test Passed");
             }
         }
+
+
+        [When(@"I add invalid '([^']*)', '([^']*)' and '([^']*)'")]
+        public void WhenIAddInvalidAnd(string certificate, string certificateFrom, string year)
+        {
+            certObj.ClickCertification();
+            certObj.CertificationSteps(certificate, certificateFrom, year);
+        }
+
+        [Then(@"Certification record should NOT be added and an error message '([^']*)' should be displayed")]
+        public void ThenCertificationRecordShouldNOTBeAddedAndAnErrorMessageShouldBeDisplayed(string message)
+        {
+            string invalidCertText = certObj.InvalidCert();
+            screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+
+
+            Console.WriteLine(message);
+            Console.WriteLine(invalidCertText);
+            if (invalidCertText == message)
+            {
+                test = extentReportObj.CreateTest("Invalid Certifications", " Test for invalid certifications data").AddScreenCaptureFromPath(screenShotPath);
+                test.Log(Status.Info, "Correct message");
+                test.Log(Status.Pass, "Test passed");
+                Assert.Pass("Correct message is displayed, Test Pass");
+            }
+            else
+            {
+                test = extentReportObj.CreateTest("Invalid Certifications", " Test for invalid certifications data").AddScreenCaptureFromPath(screenShotPath);
+                test.Log(Status.Info, "Not a correct message ");
+                test.Log(Status.Fail, "OOPS! Test Fail");
+
+                Assert.Fail("OOPS! Not a correct message, Test Fail");
+
+
+            }
+        }       
+
     }
 }

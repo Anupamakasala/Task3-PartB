@@ -35,9 +35,9 @@ namespace AdvancedTaskSpecFlow.Pages
         //Wait for the text to exist
         public string wait2 = "//div[@data-tab='second']//table/tbody/tr/td[1]";
         //Wait for Delete icon to be clickable
-        public string wait3 = "//div[@data-tab='second']//table/tbody/tr/td[3]/span[2]/i";       
+        public string wait3 = "//div[@data-tab='second']//table/tbody/tr/td[3]/span[2]/i";
 
-
+        IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
         public void SkillsClick()
         {
             skillTab.Click();
@@ -116,6 +116,12 @@ namespace AdvancedTaskSpecFlow.Pages
         {                       
             return deletedSkill.Text;          
             
+        }
+
+        public string InvalidSkills()
+
+        {
+            return msgError1.Text;
         }
     }
 }

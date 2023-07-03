@@ -31,8 +31,9 @@ namespace AdvancedTaskSpecFlow.Pages
         IWebElement newUpdatedCertificate => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]"));
         IWebElement deleteCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[2]/i"));
         IWebElement deletedCertificateText => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
+        IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
 
-            //Add Certification            
+        //Add Certification            
         public void ClickCertification()
         {
                 certificationTab.Click();
@@ -110,6 +111,13 @@ namespace AdvancedTaskSpecFlow.Pages
             return deletedCertificateText.Text;         
 
         }
+
+
+        public string InvalidCert()
+        {
+            return msgError1.Text;
+        }
+
 
 
     }

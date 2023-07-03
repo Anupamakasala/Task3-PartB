@@ -125,6 +125,33 @@ namespace AdvancedTaskSpecFlow.Features
             testRunner.Then(string.Format("The record should be  deleted and \'{0}\' should NOT be displayed in the list", certificate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestCaseAttribute("AWS", "Pearson VUE", "2020", "This information is already exist.", null, TestName="_4_AddCertificateWithInvalidDetailsOnProfilePage with \"AWS\", \"Pearson VUE\", \"2020" +
+            "\", \"This information is already exist_\"")]
+        [NUnit.Framework.TestCaseAttribute("", "FromOnly", "2020", "Please enter Certification Name, Certification From and Certification Year", null, TestName="_4_AddCertificateWithInvalidDetailsOnProfilePage with \"\", \"FromOnly\", \"2020\", \"Pl" +
+            "ease enter Certification Name, Certification From and Certification Year\"")]
+        [NUnit.Framework.TestCaseAttribute("CertOnly", "", "2020", "Please enter Certification Name, Certification From and Certification Year", null, TestName="_4_AddCertificateWithInvalidDetailsOnProfilePage with \"CertOnly\", \"\", \"2020\", \"Pl" +
+            "ease enter Certification Name, Certification From and Certification Year\"")]
+        [NUnit.Framework.TestCaseAttribute("", "", "2020", "Please enter Certification Name, Certification From and Certification Year", null, TestName="_4_AddCertificateWithInvalidDetailsOnProfilePage with \"\", \"\", \"2020\", \"Please ent" +
+            "er Certification Name, Certification From and Certification Year\"")]
+        [NUnit.Framework.TestCaseAttribute("", "", "", "Please enter Certification Name, Certification From and Certification Year", null, TestName="_4_AddCertificateWithInvalidDetailsOnProfilePage with \"\", \"\", \"\", \"Please enter C" +
+            "ertification Name, Certification From and Certification Year\"")]
+        public virtual void _4_AddCertificateWithInvalidDetailsOnProfilePage(string certificate, string certificatefrom, string year, string message, string[] exampleTags)
+        {
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Certificate", certificate);
+            argumentsOfScenario.Add("Certificatefrom", certificatefrom);
+            argumentsOfScenario.Add("Year", year);
+            argumentsOfScenario.Add("message", message);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4. Add Certificate with invalid details on Profile Page", null, exampleTags, argumentsOfScenario);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            testRunner.Given("I logged  into Mars application successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.When(string.Format("I add invalid \'{0}\', \'{1}\' and \'{2}\'", certificate, certificatefrom, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("Certification record should NOT be added and an error message \'{0}\' should be dis" +
+                        "played", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
