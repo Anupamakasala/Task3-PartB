@@ -50,7 +50,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.5.0, )"
+              "version": "[17.7.2, )"
             },
             "Microsoft.NETCore.App": {
               "target": "Package",
@@ -62,15 +62,15 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.4.2, )"
+              "version": "[4.5.0, )"
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[4.12.4, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[4.12.4, )"
             },
             "SpecFlow": {
               "target": "Package",
@@ -105,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

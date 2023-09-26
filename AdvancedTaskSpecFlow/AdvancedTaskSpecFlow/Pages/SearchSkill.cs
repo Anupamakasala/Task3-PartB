@@ -56,11 +56,10 @@ namespace AdvancedTaskSpecFlow.Pages
         //Search a Skill
         public void SearchSkillSteps(string Search1)
         {
-            //Thread.Sleep(3000);            
+                        
             WaitHelpers.WaitToExist(driver, "XPath", waitSearchTextbox1, 20);
             searchSkillTextbox.Click();
             searchSkillTextbox.SendKeys(Search1);
-
             searchIcon.Click();
             WaitHelpers.WaitToBeVisible(driver, "XPath", waitBtn1, 10);
 
