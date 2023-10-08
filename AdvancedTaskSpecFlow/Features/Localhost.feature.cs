@@ -113,6 +113,7 @@ namespace AdvancedTaskSpecFlow.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02) Login into the localhost", null, exampleTags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+            testRunner.Given("I navigate to the localhost portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When("I Click on Signin Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When(string.Format("I Entered \'{0}\'and\'{1}\'to login into the portal", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("I Click on the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

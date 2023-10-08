@@ -19,10 +19,11 @@ Examples:
 
 
 Scenario Outline: 02) Login into the localhost
+    Given I navigate to the localhost portal 
     When  I Click on Signin Button
 	When I Entered '<Emailaddress>'and'<Password>'to login into the portal
-	And I Click on the Login Button
-	Then I Successfully logged into the portal and get'<Name>' on profile page
+    And I Click on the Login Button
+    Then I Successfully logged into the portal and get'<Name>' on profile page
 
 Examples: 
 | Emailaddress      | Password  | Name     |
