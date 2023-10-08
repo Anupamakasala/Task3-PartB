@@ -115,7 +115,7 @@ namespace AdvancedTaskSpecFlow.Features
             this.ScenarioStart();
             testRunner.Given("I navigate to the localhost portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When("I Click on Signin Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When(string.Format("I Entered \'{0}\'and\'{1}\'to login into the portal", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And(string.Format("I Entered \'{0}\'and\'{1}\'to login into the portal", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("I Click on the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("I Successfully logged into the portal and get\'{0}\' on profile page", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
