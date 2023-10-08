@@ -25,7 +25,7 @@ Scenario Outline: 02) Login into the localhost
 	Then I Successfully logged into the portal and get'<Name>' on profile page
 
 Examples: 
-| Emailaddress    | Password    | Name     |
+| Emailaddress      | Password  | Name     |
 | Akash11@gmail.com | Akash11   | Hi Akash |
 | Anshu11@gmail.com | Anshu11   | Hi Anshu |
 | Ayra11@gmail.com  | Ayra11    | Hi Ayra  |
