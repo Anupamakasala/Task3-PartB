@@ -12,10 +12,10 @@ Scenario Outline: 01) Signup for the Localhost
 	Then I Successfully Signed up for the portal and get Signup '<Message>' on page
 
 Examples: 
-| Firstname | Lastname | Emailaddress      | Password | ConfirmPassword |
-| Akash     | Rana     | Akash11@gmail.com | Akash11  | Akash11         |
-| Anshu     | Rana     | Anshu11@gmail.com | Anshu11  | Anshu11         |
-| Ayra      | Rana     | Ayra11@gmail.com  | Ayra11   | Ayra11          |
+| Firstname | Lastname | Emailaddress        | Password | ConfirmPassword |
+| Akash     | Rana     | Akash1101@gmail.com | Akash11  | Akash11         |
+| Anshu     | Rana     | Anshu1101@gmail.com | Anshu11  | Anshu11         |
+| Ayra      | Rana     | Ayra1101@gmail.com  | Ayra11   | Ayra11          |
 
 
 Scenario Outline: 02) Login into the localhost
