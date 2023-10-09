@@ -12,20 +12,21 @@ Scenario Outline: 01) Signup for the Localhost
 	Then I Successfully Signed up for the portal and get Signup '<Message>' on page
 
 Examples: 
-| Firstname | Lastname | Emailaddress      | Password | ConfirmPassword |
-| Akash     | Rana     | Akash11@gmail.com | Akash11  | Akash11         |
-| Anshu     | Rana     | Anshu11@gmail.com | Anshu11  | Anshu11         |
-| Ayra      | Rana     | Ayra11@gmail.com  | Ayra11   | Ayra11          |
+| Firstname | Lastname | Emailaddress        | Password | ConfirmPassword |
+| Akash     | Rana     | Akash1101@gmail.com | Akash11  | Akash11         |
+| Anshu     | Rana     | Anshu1101@gmail.com | Anshu11  | Anshu11         |
+| Ayra      | Rana     | Ayra1101@gmail.com  | Ayra11   | Ayra11          |
 
 
 Scenario Outline: 02) Login into the localhost
+    Given I navigate to the localhost portal 
     When  I Click on Signin Button
-	When I Entered '<Emailaddress>'and'<Password>'to login into the portal
-	And I Click on the Login Button
-	Then I Successfully logged into the portal and get'<Name>' on profile page
+    And I Entered '<Emailaddress>'and'<Password>'to login into the portal
+    And I Click on the Login Button
+    Then I Successfully logged into the portal and get'<Name>' on profile page
 
 Examples: 
-| Emailaddress    | Password    | Name     |
+| Emailaddress      | Password  | Name     |
 | Akash11@gmail.com | Akash11   | Hi Akash |
 | Anshu11@gmail.com | Anshu11   | Hi Anshu |
 | Ayra11@gmail.com  | Ayra11    | Hi Ayra  |

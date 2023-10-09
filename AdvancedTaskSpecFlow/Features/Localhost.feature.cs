@@ -70,12 +70,12 @@ namespace AdvancedTaskSpecFlow.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestCaseAttribute("Akash", "Rana", "Akash11@gmail.com", "Akash11", "Akash11", null, TestName="_01SignupForTheLocalhost with \"Akash\", \"Rana\", \"Akash11@gmail_com\", \"Akash11\", \"A" +
-            "kash11\"")]
-        [NUnit.Framework.TestCaseAttribute("Anshu", "Rana", "Anshu11@gmail.com", "Anshu11", "Anshu11", null, TestName="_01SignupForTheLocalhost with \"Anshu\", \"Rana\", \"Anshu11@gmail_com\", \"Anshu11\", \"A" +
-            "nshu11\"")]
-        [NUnit.Framework.TestCaseAttribute("Ayra", "Rana", "Ayra11@gmail.com", "Ayra11", "Ayra11", null, TestName="_01SignupForTheLocalhost with \"Ayra\", \"Rana\", \"Ayra11@gmail_com\", \"Ayra11\", \"Ayra" +
-            "11\"")]
+        [NUnit.Framework.TestCaseAttribute("Akash", "Rana", "Akash1101@gmail.com", "Akash11", "Akash11", null, TestName="_01SignupForTheLocalhost with \"Akash\", \"Rana\", \"Akash1101@gmail_com\", \"Akash11\", " +
+            "\"Akash11\"")]
+        [NUnit.Framework.TestCaseAttribute("Anshu", "Rana", "Anshu1101@gmail.com", "Anshu11", "Anshu11", null, TestName="_01SignupForTheLocalhost with \"Anshu\", \"Rana\", \"Anshu1101@gmail_com\", \"Anshu11\", " +
+            "\"Anshu11\"")]
+        [NUnit.Framework.TestCaseAttribute("Ayra", "Rana", "Ayra1101@gmail.com", "Ayra11", "Ayra11", null, TestName="_01SignupForTheLocalhost with \"Ayra\", \"Rana\", \"Ayra1101@gmail_com\", \"Ayra11\", \"Ay" +
+            "ra11\"")]
         public virtual void _01SignupForTheLocalhost(string firstname, string lastname, string emailaddress, string password, string confirmPassword, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -113,8 +113,9 @@ namespace AdvancedTaskSpecFlow.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02) Login into the localhost", null, exampleTags, argumentsOfScenario);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+            testRunner.Given("I navigate to the localhost portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.When("I Click on Signin Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When(string.Format("I Entered \'{0}\'and\'{1}\'to login into the portal", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And(string.Format("I Entered \'{0}\'and\'{1}\'to login into the portal", emailaddress, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("I Click on the Login Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("I Successfully logged into the portal and get\'{0}\' on profile page", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

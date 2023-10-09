@@ -16,8 +16,8 @@ namespace AdvancedTaskSpecFlow.Pages
     internal  class LoginPage : CommonDriver
     {
 
-        private IWebElement SignIn => driver.FindElement(By.XPath("//a[@class='item']"));
-
+        private IWebElement SignIn => driver.FindElement(By.XPath("/html/body/div/div/div/div/div/div[1]/div/a"));
+        
         // Finding the Email Field
         private IWebElement Email => driver.FindElement(By.Name("email"));
 
@@ -48,7 +48,7 @@ namespace AdvancedTaskSpecFlow.Pages
         public void ClickonSignin()
             {
                 //Click on Signin button
-                WaitHelpers.WaitToBeClickable(driver, "XPath", "//a[@class='item']", 10);
+                WaitHelpers.WaitToBeClickable(driver,"XPath", "/html/body/div/div/div/div/div/div[1]/div/a", 10);
                 SignIn.Click();
             }
          
